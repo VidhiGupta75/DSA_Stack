@@ -1,0 +1,70 @@
+public class Main {
+    public static final int MAX = 4;
+    private int top;
+    private int[] stackArray;
+
+    public Main() {
+        top = -1;
+        stackArray = new int[MAX];
+    }
+
+    public void push(int value) {
+        if (top == MAX - 1) {
+            System.out.println("Stack overflow");
+        } else {
+            stackArray[++top] = value;
+            System.out.println("Pushed: " + value);
+        }
+    }
+
+    public void pop() {
+        if (top == -1) {
+            System.out.println("Stack underflow");
+        } else {
+            int poppedValue = stackArray[top--];
+            System.out.println("Popped: " + poppedValue);
+        }
+    }
+
+    public void peek() {
+        if (top == -1) {
+            System.out.println("Stack empty");
+        } else {
+            System.out.println("Top element: " + stackArray[top]);
+        }
+    }
+
+    public static void main(String[] args) {
+        Main mystack = new Main();
+
+        mystack.push(1);
+        mystack.push(2);
+        mystack.push(3);
+        mystack.push(4);
+        mystack.push(5);
+
+        mystack.pop();
+        mystack.pop();
+        mystack.pop();
+        mystack.pop();
+        mystack.pop();
+
+        mystack.peek();
+    }
+}
+OUTPUT:
+Pushed: 1
+Pushed: 2
+Pushed: 3
+Pushed: 4
+Stack overflow
+Popped: 4
+Popped: 3
+Popped: 2
+Popped: 1
+Stack underflow
+Stack empty
+
+=== Code Execution Successful ===
+
+Github Link
